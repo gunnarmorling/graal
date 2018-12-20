@@ -42,7 +42,7 @@ What: Calling `Class.forName()`; listing methods and fields of a class; invoking
 
 Individual classes, methods, and fields that should be accessible via reflection need to be known ahead-of-time. SubstrateVM tries to resolve these elements through a static analysis that detects calls to the reflection API. Where the analysis fails the program elements reflectively accessed at run time must be specified during native image generation in a configuration file via the option `-H:ReflectionConfigurationFiles=`, or by using [`RuntimeReflection`](http://www.graalvm.org/sdk/javadoc/org/graalvm/nativeimage/RuntimeReflection.html) from a [`Feature`](http://www.graalvm.org/sdk/javadoc/org/graalvm/nativeimage/Feature.html). For more details, read our [documentation on reflection](REFLECTION.md).
 
-During native image generation, reflection can be used without restrictions during native image generation, for example in static initializers.
+During native image generation, reflection can be used without restrictions, for example in static initializers.
 
 Dynamic Proxy
 ----------
@@ -192,4 +192,4 @@ JCA Security Services
 
 What: Java Cryptography Architecture (JCA) and all the corresponding cryptographic communication libraries
 
-The JCA security services must be enabled using the `--enable-all-security-services` option. They require a custom configuration on Substrate VM since the JCA framework relies on reflection to achieve algorithm extensibility. For more details, read our [documentation on security services.](JCA-SECURITY-SERVICES.md).
+The JCA security services must be enabled using the `--enable-all-security-services` option. They require a custom configuration on Substrate VM since the JCA framework relies on reflection to achieve algorithm extensibility. For more details, read our [documentation on security services](JCA-SECURITY-SERVICES.md).
